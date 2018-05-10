@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
+This is derived from work done by Ashish Chopra's [ngx-gauge](https://github.com/ashish-chopra/ngx-gauge) project and his Angular 1.x [angular-gauge](https://github.com/ashish-chopra/angular-gauge) demo.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
