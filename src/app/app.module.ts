@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
+/* JavaScript imports */
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { NgxGaugeModule } from 'ngx-gauge';
 
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -13,7 +14,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import { NgxGaugeModule } from 'ngx-gauge';
+import { AppComponent } from './app.component';
+
+
 import { XgaugeComponent } from './xgauge/xgauge.component';
 
 @NgModule({
@@ -21,7 +24,12 @@ import { XgaugeComponent } from './xgauge/xgauge.component';
     AppComponent, XgaugeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, MatInputModule, NgxGaugeModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSelectModule, BrowserAnimationsModule, MatSliderModule, MatSlideToggleModule, MatCardModule
+     BrowserModule,
+    FormsModule,
+        NgxGaugeModule,
+      MatInputModule, MatButtonModule, MatCheckboxModule, MatToolbarModule,
+      MatSelectModule, BrowserAnimationsModule, MatSliderModule,
+      MatSlideToggleModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
