@@ -1,0 +1,106 @@
+<div class="spacer playground">
+    <section class="playground-section">
+        <mat-toolbar class="mat-accent">
+            <div class="mat-toolbar-tools">
+                <h3>Tune Gauge Properties</h3>
+            </div>
+        </mat-toolbar>
+        <br>
+        <p>
+            This is Angular Gauge's playground. Here you get the options to fiddle with various properties of gauge widget directive. Play around and see it working on the right side.
+        </p>
+
+        <br>
+        <div layout-gt-sm="row" class="mat-block">
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Gauge Type</mat-label>
+                <mat-select [(ngModel)]="options.type">
+                    <mat-option value="full">Full</mat-option>
+                    <mat-option value="semi">Semi</mat-option>
+                    <mat-option value="arch">Arch</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Cap Style</mat-label>
+                <mat-select  [(ngModel)]="options.cap">
+                    <mat-option value="round">Round</mat-option>
+                    <mat-option value="butt">Butt</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <mat-form-field class="mat-block">
+            <mat-label>Size</mat-label>
+            <mat-slider min="100" max="500" class="mat-primary" [(ngModel)]="options.size">
+            </mat-slider>
+            <div>
+                <input matInput type="number" [(ngModel)]="options.size">
+            </div>
+        </mat-form-field>
+        <mat-form-field class="mat-block">
+            <mat-label>Thick</mat-label>
+            <mat-slider min="1" max="50" class="mat-primary" [(ngModel)]="options.thick">
+            </mat-slider>
+            <div>
+                <input matInput type="number" [(ngModel)]="options.thick">
+            </div>
+        </mat-form-field>
+        <br>
+        <div layout-gt-sm="row" class="mat-block">
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Min</mat-label>
+                <input matInput [(ngModel)]="options.min">
+            </mat-form-field>
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Max</mat-label>
+                <input matInput [(ngModel)]="options.max">
+            </mat-form-field>
+        </div>
+        <mat-form-field class="mat-block">
+            <mat-label>Value</mat-label>
+            <input  matInput type="text" [(ngModel)]="options.value">
+        </mat-form-field>
+        <mat-form-field class="mat-block">
+            <mat-label>Label</mat-label>
+            <input matInput  [(ngModel)]="options.label">
+        </mat-form-field>
+        <div layout-gt-sm="row" class="mat-block">
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Prepend</mat-label>
+                <input matInput [(ngModel)]="options.prepend">
+            </mat-form-field>
+            <mat-form-field class="mat-block" flex-gt-sm>
+                <mat-label>Append</mat-label>
+                <input matInput  [(ngModel)]="options.append">
+            </mat-form-field>
+        </div>
+        <div layout-gt-sm="row" class="mat-block">
+            <mat-form-field class="mat-block" flex-gt-sm  appearance="outline">
+                <mat-label>Foreground Color</mat-label>
+                <input matInput [(ngModel)]="options.foregroundColor" placeholder="foregroundColor" type="color">
+            </mat-form-field>
+            <mat-form-field class="mat-block" flex-gt-sm  appearance="outline">
+                <mat-label>Background Color</mat-label>
+                <input matInput [(ngModel)]="options.backgroundColor" type="color">
+            </mat-form-field>
+        </div>
+        <div layout-gt-sm="row" class="mat-block" layout-align="space-between center">
+
+            <div flex style="max-width:200px;">Thresholds</div>
+            <mat-slide-toggle [(ngModel)]="enableThresholds" aria-label="Switch 1"></mat-slide-toggle>
+
+        </div>
+        <small>
+            Toggle the threshold switch to apply a threshold based color range configuration. And change the gauge's value to see different colors in action.
+        </small>
+        <br /> <br />
+        <mat-card class="mat-whiteframe-1dp" layout-padding layout layout-align="center center">
+            <pre><code>{{enableThresholds ? thresholdConfig : {} | json}}</code></pre>
+        </mat-card>
+    </section>
+    <section class="playground-section">
+        <div>
+            <ngx-gauge [type]="options.type" [size]="options.size" [thick]="options.thick" [label]="options.label" [append]="options.append" [prepend]="options.prepend" [cap]="options.cap" [foregroundColor]="options.foregroundColor" [backgroundColor]="options.backgroundColor" [value]="options.value" [min]="options.min" [max]="options.max" [thresholds]="enableThresholds ? thresholdConfig : {}"></ngx-gauge>
+        </div>
+    </section>
+</div>
+<div class="spacer"></div>
